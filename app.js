@@ -15,7 +15,7 @@ main().catch(err => console.log(err));
 
 async function main() {
 mongoose.set('strictQuery', false);
-await mongoose.connect("mongodb+srv://AbhishekPaika:Test123@cluster0.zwiph.mongodb.net/?retryWrites=true&w=majority");
+await mongoose.connect("mongodb+srv://AbhishekPaika:Test123@cluster0.zwiph.mongodb.net/newToDoListDB");
 }
 
 const itemsSchema = new mongoose.Schema({
