@@ -10,7 +10,13 @@ app.set('view engine', 'ejs');
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(express.static("public"));
 
-mongoose.connect('mongodb://localhost:27017/newToDoListDB', {useNewUrlParser: true});
+//connect to MongoDB by specifying port to access MongoDB server
+main().catch(err => console.log(err));
+
+async function main() {
+mongoose.set('strictQuery', false);
+await mongoose.connect("mongodb+srv://AbhishekPaika:Test123@cluster0.zwiph.mongodb.net/?retryWrites=true&w=majority");
+}
 
 const itemsSchema = new mongoose.Schema({
   name: String
